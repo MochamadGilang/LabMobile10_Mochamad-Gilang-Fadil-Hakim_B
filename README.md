@@ -17,8 +17,8 @@ di bawah  ini ada kode ketika berhasil login dan langsung di arahkan ke homepage
 
 router.beforeEach(async (to, from, next) => {
   const authStore = useAuthStore();
-  
-  if (to.path === '/login' && authStore.isAuth) {
+
+ if (to.path === '/login' && authStore.isAuth) {
     next('/home');
   } else if (to.meta.isAuth && !authStore.isAuth) {
     next('/login');
